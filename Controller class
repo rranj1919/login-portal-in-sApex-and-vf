@@ -1,0 +1,30 @@
+public class LoginPages {
+    
+    public String userName{get; set;}
+    public String password {get; set;}
+    
+    Public void doLogin(){
+
+        //System.debug('userName => ' +userName + ' pasword => ' +password);
+      //  integer count= database.countQuery('select count(id) from LoginDB__c where Name = \'Rahul\' and password__c = \'Ranjan\'');
+    
+         String a ='SELECT Count() FROM LoginDB__c where Name=:userName and password__c=:password';
+        Integer c = Database.countQuery(a);
+
+        
+        if (c>0)
+        {
+            ApexPages.addmessage(new ApexPages.message(ApexPages.severity.CONFIRM,'correct userName'));
+            System.debug(' correct count:'+c);
+            System.debug('correct userName => ' +userName + ' correct password => ' +password); 
+        }
+        else{
+            ApexPages.addmessage(new ApexPages.message(ApexPages.severity.ERROR,'incorrect uid'));
+            System.debug('incorrect uid');
+        }
+        
+    }
+    
+    
+}
+    
