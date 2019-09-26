@@ -1,0 +1,37 @@
+<apex:page sidebar="false" controller="LoginPages" showheader="false" standardStylesheets="false" docType="html-5.0">
+    
+<style type="text/css">
+.asideText { color: green;
+font-size: 150%;
+font-family: "Times New Roman", Times, serif;
+text-transform: uppercase;
+height: 200px;
+  width: 50%;
+
+  
+ }
+ 
+ .userName{ color : red;
+  font-size: 100%
+  font-family: "Times";
+  text-transform: uppercase;
+  }
+   
+ </style>
+ <style>
+body
+{
+   background-color: coral; }
+   </style>
+ <h Class="asideText">Login Portal</h>
+<br></br><br></br>
+<apex:form >
+
+<b Class="userName">UserName</b>    <apex:input value="{!userName}" id="userName"/>
+
+
+<b Class="userName">Password</b>    <apex:input value="{!password}" id="password"/>
+<apex:commandButton id="saveBtn" value="Save" action="{!doLogin}" />
+<apex:pageMessages />
+</apex:form>
+</apex:page>
